@@ -21,7 +21,7 @@ const App = () => {
   const parcelaEntradaPadrao = 2534.23;
   const parcelaEntradaComBaloes = 1678.9;
   const valorBaloesTotal = 15000;
-  const parcelaMensalConstrutora = 1843;
+  const parcelaMensalConstrutora = 1819.94;
 
   const parcelaCheiaPrice = 1834.78;
   const evolucaoInicialPct = 0.8;

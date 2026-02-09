@@ -27,6 +27,10 @@ const App = () => {
   const evolucaoFinalPct = 1.0;
   const valorTaxaAberturaConta = 1000;
   const valorTaxaEngenharia = 2000;
+  const prazoFinanciamentoMeses = 420;
+  const parcelaFinanciamentoInicial = 1834.78;
+  const taxaNominalPriceAa = 8.16;
+  const financiamentoInicial = 244800;
 
   const mesesDisponiveis = useMemo(() => {
     const dataInicio = new Date(2026, 1, 1);
@@ -305,6 +309,34 @@ const App = () => {
                 </Area>
               </AreaChart>
             </ResponsiveContainer>
+          </div>
+        </div>
+
+        <div style={{ background: '#fff', borderRadius: 16, padding: 24, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', border: '1px solid #e6eef8', marginBottom: 24 }}>
+          <h2 style={{ margin: 0, marginBottom: 14, color: '#0f172a', fontSize: 20, fontWeight: 800 }}>
+            Detalhes do Financiamento
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
+            <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 12, padding: 14 }}>
+              <p style={{ margin: 0, marginBottom: 6, color: '#64748b', fontSize: 11, fontWeight: 700, textTransform: 'uppercase' }}>Prazo Inicial</p>
+              <p style={{ margin: 0, color: '#0f172a', fontSize: 22, fontWeight: 800 }}>{prazoFinanciamentoMeses} meses</p>
+            </div>
+            <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 12, padding: 14 }}>
+              <p style={{ margin: 0, marginBottom: 6, color: '#64748b', fontSize: 11, fontWeight: 700, textTransform: 'uppercase' }}>Parcela Inicial</p>
+              <p style={{ margin: 0, color: '#0f172a', fontSize: 22, fontWeight: 800 }}>
+                {`R$ ${parcelaFinanciamentoInicial.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+              </p>
+            </div>
+            <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 12, padding: 14 }}>
+              <p style={{ margin: 0, marginBottom: 6, color: '#64748b', fontSize: 11, fontWeight: 700, textTransform: 'uppercase' }}>Taxa Nominal PRICE</p>
+              <p style={{ margin: 0, color: '#0f172a', fontSize: 22, fontWeight: 800 }}>{taxaNominalPriceAa.toLocaleString('pt-BR')}% aa</p>
+            </div>
+            <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 12, padding: 14 }}>
+              <p style={{ margin: 0, marginBottom: 6, color: '#64748b', fontSize: 11, fontWeight: 700, textTransform: 'uppercase' }}>Financiamento Inicial</p>
+              <p style={{ margin: 0, color: '#0f172a', fontSize: 22, fontWeight: 800 }}>
+                {`R$ ${financiamentoInicial.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+              </p>
+            </div>
           </div>
         </div>
       </div>

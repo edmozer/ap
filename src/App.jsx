@@ -3,6 +3,8 @@ import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, A
 import { Home, TrendingUp, Key, Lock } from 'lucide-react';
 
 const App = () => {
+  const mesesFluxoTotal = 21;
+
   const senhaConfigurada = import.meta.env.VITE_PAGE_PASSWORD;
 
   const [senhaDigitada, setSenhaDigitada] = useState('');
@@ -10,13 +12,12 @@ const App = () => {
   const [acessoLiberado, setAcessoLiberado] = useState(() => sessionStorage.getItem('fluxo_auth_ok') === '1');
 
   const [useBaloes, setUseBaloes] = useState(false);
-  const [mesChaves, setMesChaves] = useState(10);
+  const [mesChaves, setMesChaves] = useState(mesesFluxoTotal - 1);
   const [useTaxaAberturaConta, setUseTaxaAberturaConta] = useState(false);
   const [mesTaxaAberturaConta, setMesTaxaAberturaConta] = useState(0);
   const [useTaxaEngenharia, setUseTaxaEngenharia] = useState(false);
   const [mesTaxaEngenharia, setMesTaxaEngenharia] = useState(0);
 
-  const mesesFluxoTotal = 21;
   const parcelaEntradaPadrao = 2534.23;
   const parcelaEntradaComBaloes = 1678.9;
   const valorBaloesTotal = 15000;
@@ -214,7 +215,7 @@ const App = () => {
             <input
               type="range"
               min="4"
-              max="20"
+              max={mesesFluxoTotal - 1}
               value={mesChaves}
               onChange={(e) => setMesChaves(parseInt(e.target.value))}
               style={{ width: '100%' }}
